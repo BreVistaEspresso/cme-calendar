@@ -53,12 +53,7 @@ self.addEventListener('fetch',e=>{{
 """)
 json.dump({"asOf":asof,"asOfIso":run,"count":len(data),"entries":data},open(f"{out}/latest.json","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))
 open(f"{out}/_headers","w").write("/sw.js\n  Cache-Control: no-cache\n/latest.json\n  Cache-Control: no-cache\n/index.html\n  Cache-Control: no-cache\n")
-from PIL import Image, ImageDraw, ImageFont
-for n in (192,512):
-    im=Image.new("RGB",(n,n),"#3E1F47"); g=ImageDraw.Draw(im)
-    try: f=ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",int(n*0.30))
-    except Exception: f=ImageFont.load_default()
-    g.text((n/2,n*0.46),"CME",fill="#ffffff",font=f,anchor="mm")
-    g.rounded_rectangle((n*0.28,n*0.68,n*0.72,n*0.72),radius=n*0.02,fill="#E8B84A")
-    im.save(f"{out}/icon-{n}.png")
+from PIL import Image
+src=Image.open(f"{root}/assets/icon-512.png").convert("RGB")  # committed icon (Calendar Pulse); do not regenerate
+src.save(f"{out}/icon-512.png"); src.resize((192,192),Image.LANCZOS).save(f"{out}/icon-192.png")
 print("pwa built:", out, "entries", len(data), "asOf", asof)
