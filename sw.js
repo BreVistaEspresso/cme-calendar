@@ -1,5 +1,5 @@
-const C='cme-shell-2026-10-31';
-const SHELL=['./','index.html','app.js?v=2026-10-31','manifest.webmanifest','icon-192.png','icon-512.png'];
+const C='cme-shell-2026-11-01';
+const SHELL=['./','index.html','app.js?v=2026-11-01','manifest.webmanifest','icon-192.png','icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{
