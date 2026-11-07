@@ -1,4 +1,4 @@
-/* Brevista CME Calendar - Design E. Plain JS, no framework, no build step. Data: conferences.json */
+/* CME Calendar - Design E. Plain JS, no framework, no build step. Data: conferences.json */
 (function () {
   'use strict';
   var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -220,7 +220,7 @@
   }
   function buildICS(list) {
     var d = new Date(), stamp = d.getUTCFullYear() + pad(d.getUTCMonth() + 1) + pad(d.getUTCDate()) + 'T' + pad(d.getUTCHours()) + pad(d.getUTCMinutes()) + pad(d.getUTCSeconds()) + 'Z';
-    var L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Brevista//Global CME Calendar//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:Brevista CME Calendar'];
+    var L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//CME Calendar//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:CME Calendar'];
     list.forEach(function (e) {
       L.push('BEGIN:VEVENT', 'UID:cme-' + e.id + '-' + e.start + '@global-cme-calendar', 'DTSTAMP:' + stamp,
         'DTSTART;VALUE=DATE:' + icsDate(e.start), 'DTEND;VALUE=DATE:' + icsNext(e.end || e.start), 'TRANSP:TRANSPARENT',
@@ -262,7 +262,7 @@
     });
     $('export').addEventListener('click', function () {
       var ex = cur.filter(function (e) { return e.precision === 'exact'; });
-      if (ex.length) download('brevista-cme-calendar-' + today + '.ics', buildICS(ex));
+      if (ex.length) download('cme-calendar-' + today + '.ics', buildICS(ex));
     });
     $('fsList').addEventListener('click', function (ev) { var b = ev.target.closest('.opt'); if (!b) return; $('filterSheet').close(); setFilter(fs.kind, b.dataset.v); });
     $('fsFind').addEventListener('input', function (ev) { paintOpts(ev.target.value); });
