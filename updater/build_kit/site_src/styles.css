@@ -29,7 +29,10 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(-
 .hero-top{position:relative;padding:calc(26px + env(safe-area-inset-top)) 20px 0;display:flex;justify-content:space-between;align-items:center}
 .round-glass{margin-left:auto;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.18);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(0,0,0,.3)}
 .hero-copy{position:relative;padding:48px 20px 0;color:#fff}
-.hero-copy h1{margin:0;max-width:82%;text-wrap:balance;font-size:32px;line-height:1.1;font-weight:800}
+.hero-copy h1{margin:0;line-height:1.05;font-weight:800}
+.h-eyebrow{display:block;font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--lilac)}
+.h-bar{display:block;width:56px;height:5px;border-radius:3px;background:var(--orchid);margin:10px 0 8px}
+.h-name{display:block;font-size:38px;font-weight:800}
 .hero-copy p{margin:8px 0 0;font-size:16px;font-weight:500}
 /* search */
 .search-wrap{margin:-30px 16px 0;position:relative}
@@ -124,4 +127,4 @@ dialog.sheet::backdrop{background:rgba(31,15,64,.5)}
   .tile.on{background:linear-gradient(160deg,var(--violet),var(--mid))}
   .round-glass{background:rgba(255,255,255,.3)}
 }
-@media(max-width:359px){.hero-copy h1{font-size:28px}.m-name{font-size:17px}.m-head{gap:12px;padding:0 14px}.m-date{min-width:54px}.export{padding:0 20px;font-size:15px}.up-head h2{font-size:17px}.linkbtn{white-space:nowrap}.search{padding:0 18px}.search input{font-size:15px}}
+@media(max-width:359px){.h-name{font-size:32px}.h-eyebrow{font-size:11px;letter-spacing:.22em}.m-name{font-size:17px}.m-head{gap:12px;padding:0 14px}.m-date{min-width:54px}.export{padding:0 20px;font-size:15px}.up-head h2{font-size:17px}.linkbtn{white-space:nowrap}.search{padding:0 18px}.search input{font-size:15px}}
