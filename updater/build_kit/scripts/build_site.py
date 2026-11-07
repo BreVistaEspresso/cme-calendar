@@ -22,7 +22,7 @@ payload = {"asOf": asof, "asOfIso": run, "count": len(slim), "entries": slim}
 open(f"{out}/conferences.json", "w", encoding="utf-8").write(json.dumps(payload, ensure_ascii=False, separators=(",", ":")))
 
 json.dump({
-    "name": "CME Calendar", "short_name": "CME Calendar",
+    "name": "Hospital Medicine CME Calendar", "short_name": "CME Calendar",
     "description": "Verified calendar of upcoming CME conferences worldwide.",
     "start_url": "./", "scope": "./", "id": "./", "display": "standalone",
     "background_color": "#EFE9F9", "theme_color": "#34195F", "orientation": "portrait-primary",
