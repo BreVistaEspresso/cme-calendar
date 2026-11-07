@@ -4,3 +4,4 @@ build/
 pwa/
 __pycache__/
 *.bak*
+site/

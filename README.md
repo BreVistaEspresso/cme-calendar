@@ -1,4 +1,4 @@
-# Global CME Calendar
+# Brevista CME Calendar
 
-Installable web app (PWA) listing upcoming CME conferences for hospitalists and acute care physicians.
-`latest.json` is regenerated monthly by the update protocol; the app's "Update data" button pulls it.
+Installable web app (PWA, Design E) listing upcoming CME conferences. Static site served by GitHub Pages from the repo root.
+`conferences.json` is regenerated monthly by the update protocol (see `updater/`). iPhone: Share > Add to Home Screen. Android: Install app.
